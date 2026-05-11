@@ -18,8 +18,8 @@ namespace EmployeeLeaveSystem_BackEnd.Controllers
             _leaveService = leaveService;
         }
 
-        // GET api/leaverequest/my
-        [HttpGet("my")]
+        // GET api/leaverequest/my leave
+        [HttpGet("my leave")]
         public async Task<IActionResult> GetMyLeaves()
         {
             var employeeId = GetEmployeeId();

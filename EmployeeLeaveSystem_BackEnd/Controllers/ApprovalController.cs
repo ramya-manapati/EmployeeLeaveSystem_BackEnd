@@ -22,8 +22,8 @@ namespace EmployeeLeaveSystem_BackEnd.Controllers
             _context = context;
         }
 
-        // POST api/approval/decide
-        [HttpPost("decide")]
+        // POST api/approval/process
+        [HttpPost("process")]
         public async Task<IActionResult> Decide([FromBody] ApprovalRequestDto dto)
         {
             var leaveRequest = await _context.LeaveRequests
