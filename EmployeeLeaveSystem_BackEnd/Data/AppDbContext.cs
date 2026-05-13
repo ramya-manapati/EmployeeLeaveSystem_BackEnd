@@ -27,7 +27,7 @@ namespace EmployeeLeaveSystem_BackEnd.Data
                 .WithOne(lr => lr.Approval)
                 .HasForeignKey<Approval>(a => a.LeaveRequestId);
 
-            // Manager FK (Employee table self-reference)
+            // Manager FK 
             modelBuilder.Entity<Approval>()
                 .HasOne(a => a.Manager)
                 .WithMany(e => e.Approvals)
