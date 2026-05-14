@@ -51,7 +51,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAngular", policy =>
         policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
-              .AllowAnyMethod());
+              .AllowAnyMethod()
+              .AllowCredentials());
 });
 
 builder.Services.AddControllers();
@@ -93,6 +94,9 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
+
+// Ensure routing is enabled before applying CORS and authentication/authorization
+app.UseRouting();
 
 if (app.Environment.IsDevelopment())
 {
